@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+	
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+html  {
+    background-color:darkgrey;
+}
+
+h3  {
+    margin-left: 10%;
+   
+}
+
+#students  {
+    margin-left: 10%;
+}
+
+#c2  {
+    background-color: darkgrey;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+#i  {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+#x  {
+    width: 50%;
+}
+
+#r  {
+    margin-left: 39%;
+    margin-top: 5%;
+}
+
+
+#ta {
+  color: white;
+  background-color: teal;
+  height: 50px;
+  width: 150px;;
+  margin-left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body  {
+	background-color:darkgrey;
+}
+
+footer  {
+	padding: 0%;
+	width: 100%;
+}
+</style>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width= device-width, initial-scale=1"/>
+
+<h2><title>{{lop}}</title></h2>
+	
+
+	
+</head>
+
+<body>
+<div class="jumbotron text-center">
+  <h1>Birthday Problem Calculator</h1>
+  <p></p>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3></h3>
+        <p></p>
+      </div>
+      <div class="col-sm-4" id ="c2">
+        <h3>Number Of Students</h3>
+        
+        <input type="text" id="students">
+        
+        <input type="submit" id="z">
+        
+        <p id ="i"> </p>
+  
+        <div class= "container" id = "ta"> 
+          <div id = "content">
+              
+          </div>
+          
+      </div>
+      <div id = "r">
+          <input type="submit" value="refresh" id="w">
+      </div> 
+      
+      <div class="col-sm-4">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<footer>
+        {% block footer %}{% include 'FooterTwo.html' %}{% endblock %}
+</footer>
+<script>
+var x = document.getElementById("z");
+var a = document.getElementById("w");
+
+if(x.addEventListener) {x.addEventListener("click", go, false);
+			} 
+			 else if(x.attachEvent) {
+			 x.attachEvent("onclick", go);
+			 } 
+
+ if(a.addEventListener) {a.addEventListener("click", refer, false);
+			} 
+			 else if(a.attachEvent) {
+			 a.attachEvent("onclick", refer);
+			 } 
+             
+
+function go () {
+  var y = document.getElementById("content")
+  var u = document.getElementById("i");
+  var za = document.getElementById("students")
+  var uno = cal(za.value);
+  y.innerHTML = (100*uno).toFixed(2) + '%';
+  var msg = "Chance That Two Have the Same Birthday";
+  u.innerHTML = msg;
+ 
+  return (uno);
+}
+
+function cal(za) {
+  var  students = (za);
+  var  r = students;
+  var  c = 132860;
+  var  n = 1;
+    while (n < (r - 1) ) {
+      c = c * (365 - (n + 1));
+      n = n + 1;
+    }
+  var  w = (1 - (c / (365 ** r)));
+  return w;
+  }
+
+function refer() {
+    window.location.reload();
+}
+
+
+</script>
+
+
+</html>
