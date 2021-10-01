@@ -4,5 +4,4 @@ from Prob.views import homeView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homeView), 
-    path('', include('sendemail.urls')), # new
 ]
