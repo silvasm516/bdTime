@@ -19,7 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index', include('Prob.urls')),
-    path('F/', include('sendemail.urls')), 
+    path('index', include('Prob.urls'))    
 ]
 
